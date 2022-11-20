@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-app
+  template:
+    metadata:
+      labels:
+        app: flask-app
+
+    spec:
+      containers:
+        - name: flask-app-container
+          image: https://imgs.search.brave.com/_tzw3hrtQf7J30Xmy4PiyqZ8Y5MpcxxgUKWpV_44BYc/rs:fit:462:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5O/bW04bzZRMDJfcXM3/ODREMWxhZmN3SGFI/bSZwaWQ9QXBp
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              protocol: TCP
