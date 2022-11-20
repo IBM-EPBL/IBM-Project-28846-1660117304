@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+  </head>
+  <body> 
+    <!--<div id="home"><a href="/retail"><button >Home</button></a> --></div><br><br><br><br><br><br>
+    
+    <div class="login-box">
+      <h2 >SIGNUP</h2>
+      <form action="/data" method="post" class="form">
+        
+          <label for="name">Name</label>
+          <input id="name" name="name" type="name" placeholder="name" required>
+
+          
+          <label for="mail">Email</label>
+          <input id="mail" name="email" type="email" placeholder="mail" required>
+        
+        
+          <label for="psw">password</label>
+          <input id="psw" name="password" type="password" placeholder="password" minlength="8" required>
+        
+        
+          <button type="submit" class="submitbtn">Register</button>
+          <br>
+
+          <!--<button type="submit" class="backhomebtn">Back To Home</button>-->
+          <br>
+          <a href="/back" type="button">Back To Login</a><br>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, messages in messages %}
+               <div class="alert alert-{{category}}" ></div>{{messages}}</div>
+             {% endfor %}
+          {% endif %}  
+          {% endwith %} 
+      </form>
+    </div>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-position: center;
+        background-size: cover;
+        background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Supermarket_check_out.JPG/800px-Supermarket_check_out.JPG);
+    
+}
+#home{
+  text-align: left;
+}
+.login-box{
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 20px 5px 5px;
+    margin-top: auto;
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+
+    
+}
+.login-box h2{
+    font-size: 30px;
+    color: rgba(22, 7, 92, 0.726);
+    text-align: center;
+}
+.login-box label{
+    display: block;
+    text-align: left;
+}
+
+.login-box input {
+    width: 100%;
+    font-size: 1.3em;
+    border: 1px solid black;
+    box-shadow: 2px;
+    border-radius: 8px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin: 5px 0px 10px;
+    text-align: left;
+}
+
+.login-box button{
+    width: 100%;
+    background-color: rgba(40, 53, 231, 0.466);
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+    </style>
+  </body>
+</html>
